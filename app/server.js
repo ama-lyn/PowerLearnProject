@@ -1,28 +1,30 @@
-const express = require('express')
+const express = require("express");
+const session = require("express-session");
+const cors = require("cors");
 const dotenv = require("dotenv");
-const mysql = require('mysql2');
 
+const authRoutes = require("./routes/authRoutes");
 
-//Initialization
+//Intialization
 const app = express();
 dotenv.config();
 
-const db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-});
-  
-db.connect((err) => {
-    if (err) return console.log("Error connecting to Database:", err);
-    console.log("Database connected successfully");
-})
+// Middleware
+app.use(express.json());
+app.use(cors());
 
-app.get('/test', (req, res)=>{
-    res.send("Starting my project")
-})
+// Session management
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+
+// Routes
+app.use("/api/auth", authRoutes);
 
 app.listen(5000, () => {
-    console.log("Server is running on port 5000");
-})
+  console.log("Server is running on port 5000");
+});
