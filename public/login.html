@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <main>
+      <div id="centered-form">
+        <form id="form" class="form" action="/api/auth/login" method="POST">
+          <div class="title">
+            <p>Welcome Back 🌟</p>
+          </div>
+
+          <!-- Username-->
+          <label>Username </label>
+          <input
+            id="username"
+            type="text"
+            class="input"
+            placeholder="Enter your Username"
+            required
+            autocomplete="off"
+          />
+
+          <!-- Password-->
+
+          <label>Password </label>
+          <input
+            id="password"
+            type="password"
+            class="input"
+            placeholder="Enter your Password"
+            required
+            autocomplete="off"
+          />
+
+          <div class="flex-row">
+            <div>
+              <input type="checkbox" />
+              <label>Remember me </label>
+            </div>
+            <span class="span">Forgot password?</span>
+          </div>
+          <button class="button-submit">Sign In</button>
+          <p class="p">
+            Don't have an account?
+            <span class="span"><a href="/register">Sign Up</a></span>
+          </p>
+          <p id="auth-msg"></p>
+        </form>
+      </div>
+    </main>
+    <script src="js/login.js"></script>
+  </body>
+</html>

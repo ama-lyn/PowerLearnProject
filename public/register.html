@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Register</title>
+  </head>
+  <body>
+    <main>
+      <div id="centered-form">
+        <form id="form" class="form" action="/api/auth/register" method="POST">
+          <span class="title">Sign up</span>
+          <span class="subtitle">Create a free account with your email.</span>
+
+          <div class="row_container">
+            <div>
+              <!-- First Name-->
+              <label>First Name </label>
+              <input
+                id="firstName"
+                type="text"
+                class="input"
+                placeholder="Enter your First Name"
+                required
+                autocomplete="off"
+              />
+            </div>
+
+            <div>
+              <!-- Last Name-->
+              <label>Last Name </label>
+              <input
+                id="lastName"
+                type="text"
+                class="input"
+                placeholder="Enter your Last Name"
+                required
+                autocomplete="off"
+              />
+            </div>
+          </div>
+          <!-- Username-->
+          <div>
+            <label>Username </label>
+            <input
+              id="username"
+              type="text"
+              class="input"
+              placeholder="Enter your Username"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <!-- Email-->
+          <div>
+            <label>Email </label>
+            <input
+              id="email"
+              type="text"
+              class="input"
+              placeholder="Enter your Email"
+              required
+              autocomplete="off"
+            />
+          </div>
+
+          <div class="row_container">
+            <div>
+              <!-- Password-->
+              <label>Password </label>
+              <input
+                id="password"
+                type="password"
+                class="input"
+                placeholder="Enter your Password"
+                required
+                autocomplete="off"
+              />
+            </div>
+            <div>
+              <!-- Confirm Password-->
+              <label>Confirm password </label>
+              <input
+                id="confirmPassword"
+                type="password"
+                class="input"
+                placeholder="Confirm your Password"
+                required
+                autocomplete="off"
+              />
+            </div>
+          </div>
+
+          <div class="flex-row">
+            <div>
+              <input type="checkbox" />
+              <label>Remember me </label>
+            </div>
+          </div>
+          <button class="button-submit">Register</button>
+          <p class="p">
+            Don't have an account?
+            <span class="span"><a href="/login">Sign in</a></span>
+          </p>
+          <p id="auth-msg"></p>
+        </form>
+      </div>
+    </main>
+    <script src="js/register.js"></script>
+  </body>
+</html>
