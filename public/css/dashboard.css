@@ -1,6 +1,108 @@
+/* Variables
+   ============================= */
+:root {
+  --color-primary: #344e41;
+  --color-secondary: #e5590a;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --background-color: #f5f8fd;
+  --bg-right: #cde1c3;
+  --sidebar: #d2efeb;
+}
 
+.main {
+  display: grid;
+  grid-template-rows: 0.5fr 2fr 1.7fr;
+  height: 100vh;
+
+  padding-left: 16px;
+  padding-right: 16px;
   
- 
-  
-  
-  
+}
+
+.greetings {
+  grid-row: 1/2;
+  background-color: var(--background-color);
+
+  margin-top: 20px;
+}
+
+.waste {
+  grid-row: 2/3;
+  margin-bottom: 20px;
+  background-color: var(--bg-right);
+
+  border-radius: 24px;
+  padding: 12px;
+}
+
+.conversion {
+  grid-row: 3;
+  margin-bottom: 4px;
+
+  /*CONTENT*/
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.waste_title_container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.waste_title_container img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: gray;
+  border: 2px solid hotpink;
+}
+.waste_title_container h4 {
+  margin-top: 4px;
+}
+
+.waste_cards {
+  display: flex;
+  margin-top: 12px;
+  gap: 20px;
+  border: solid 2px indigo;
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card:nth-child(1) {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.suggestion {
+  grid-column: 1/2;
+  padding: 12px;
+  border-top-left-radius: 12px ;
+  border-top-right-radius: 12px ;
+
+  background-color: aquamarine;
+  border: 2px solid honeydew;
+
+}
+
+.environmental_impact {
+  grid-column: 2;
+  padding: 12px;
+  border-top-right-radius: 12px ;
+  border-top-left-radius: 12px ;
+
+  background-color: darkkhaki;
+  border: 2px solid wheat;
+}
