@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
           authMsg.textContent = "User created successfully";
           authMsg.style.color = "green";
           setTimeout(() => {
-            window.location.href = "login.html";
+            window.location.href = "/login";
           }, 5000); // 5-second delay
         }
       } catch (err) {

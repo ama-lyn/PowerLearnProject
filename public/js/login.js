@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
           authMsg.style.color = "green";
   
           setTimeout(() => {
-            window.location.href = "dashboard.html"; // Change to your desired redirect location
+            window.location.href = "/dashboard"; // Change to your desired redirect location
           }, 3000); // 3-second delay
         } else {
           authMsg.textContent = data || "An error occurred";
