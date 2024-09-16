@@ -71,19 +71,20 @@ body {
 }
 
 .menu_link a {
+  padding: 8px;
   display: flex;
   text-decoration: none;
   color: inherit;
   align-items: center;
   font-weight: 500;
+  border-radius: 24px;
 }
 
 .menu_link img{
   margin-right: 6px;
 }
 
-.menu_link a:active {
+.menu_link a.active{
   background-color: var(--color-white);
-  padding: 8px;
-  border-radius: 24px;
+  
 }

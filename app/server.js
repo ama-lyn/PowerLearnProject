@@ -28,6 +28,18 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "dashboard.html"));
   });
 
+  app.get("/directory", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "directory.html"));
+  });
+
+  app.get("/market", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "market.html"));
+  });
+
+  app.get("/profile", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public", "profile.html"));
+  });
+
 // Session management
 app.use(
   session({
