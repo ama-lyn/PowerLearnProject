@@ -1,22 +1,22 @@
-/* Variables
-   ============================= */
-:root {
-  --color-primary: #344e41;
-  --color-secondary: #e5590a;
-  --color-black: #090909;
-  --color-white: #ffffff;
-  --background-color: #f5f8fd;
-  --bg-right: #cde1c3;
-  --sidebar: #d2efeb;
-}
-
 .main {
+  background-color: var(--background-color);
+  grid-column: 2 /3;
+
+  /*Content*/
   display: grid;
   grid-template-rows: 0.5fr 2fr 1.7fr;
   height: 100vh;
-
   padding-left: 16px;
   padding-right: 16px;
+}
+
+.rightbar {
+  grid-column: 3;
+  height: 100vh;
+
+  /*Content*/
+  display: grid;
+  grid-template-rows: 0.8fr 1fr;
 }
 
 .greetings {
@@ -103,11 +103,6 @@
 
   background-color: darkkhaki;
   border: 2px solid wheat;
-}
-
-.rightbar {
-  display: grid;
-  grid-template-rows: 0.8fr 1fr;
 }
 
 .addWaste {

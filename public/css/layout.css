@@ -1,13 +1,13 @@
 /* Variables
    ============================= */
    :root {
-    --color-primary: #344E41;
+    --color-primary: #163135;
     --color-secondary: #E5590A;
     --color-black: #090909;
     --color-white: #ffffff;
-    --background-color: #f5f8fd;
+    --background-color: #F1F8F5;
     --bg-right:#CDE1C3;
-    --sidebar:#d2efeb;
+    --sidebar:#E7F0ED;
    }
 *,
 body {
@@ -35,14 +35,6 @@ body {
   justify-content: center;
 }
 
-.main {
-  background-color: var(--background-color);
-  grid-column: 2 /3;
-}
-
-.rightbar {
-  grid-column: 3;
-}
 
 /*SIDEBAR*/
 .logo {
