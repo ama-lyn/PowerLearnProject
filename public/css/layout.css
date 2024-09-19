@@ -27,10 +27,11 @@ body {
   background-color: var(--sidebar);
   grid-column: 1 / 2;
   height: 100vh;
+  
 
   /*CONTENT*/
   display: grid;
-  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-rows: 0.8fr 2fr 1fr;
   justify-content: center;
 }
 
@@ -40,7 +41,6 @@ body {
 }
 
 .rightbar {
-  background-color: var(--color-primary);
   grid-column: 3;
 }
 
@@ -48,6 +48,7 @@ body {
 .logo {
   grid-row: 1/2;
   margin-top: 20px;
+  margin-left: 10px;
 
   color: var(--color-primary);
   font-weight: 700;
@@ -57,11 +58,14 @@ body {
   grid-row: 2/3;
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 16px; 
 }
 
 .image {
   grid-row: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: end; 
 }
 
 .menu_link {
