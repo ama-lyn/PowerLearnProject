@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/layout.css" />
-   
-    <title>Market</title>
+    <link rel="stylesheet" href="/css/recipe.css">
+    <title>Manure</title>
   </head>
   <body>
     <header class="sidebar">
@@ -13,22 +13,26 @@
 
       <div class="menu_container">
         <div class="menu_link">
-          <a href="/dashboard"><img src="images/Home.svg" alt="Home Icon" />Dashboard</a>
-        </div>
-
-        <div class="menu_link">
-          <a href="/directory">
-            <img src="images/Folder.svg" alt="Folder Icon" />Directory</a
+          <a href="/dashboard"
+            ><img src="/images/Home.svg" alt="Home Icon" />Dashboard</a
           >
         </div>
 
         <div class="menu_link">
-          <a class="active" href="/market"><img src="images/Globe.svg" alt="Globe Icon" />Market</a>
+          <a class="active" href="/directory">
+            <img src="/images/Folder.svg" alt="Folder Icon" />Directory</a
+          >
+        </div>
+
+        <div class="menu_link">
+          <a href="/market"
+            ><img src="/images/Globe.svg" alt="Globe Icon" />Market</a
+          >
         </div>
 
         <div class="menu_link">
           <a href="/profile"
-            ><img src="images/Person.svg" alt="Person Icon" />Profile</a
+            ><img src="/images/Person.svg" alt="Person Icon" />Profile</a
           >
         </div>
       </div>
@@ -43,9 +47,15 @@
     </header>
 
     <main class="main">
-        MARKET
-    </main>
+      <div class="title-container">
+        <h3>Manure to Biogas</h3>
+        <a class="btn" href="/directory">Back to Directory</a>
+      </div>
 
-    <section class="rightbar"></section>
+      <div class="recipe-container">
+        <div class="recipe-content"></div>
+        <div class="recipe-info"></div>
+      </div>
+    </main>
   </body>
 </html>

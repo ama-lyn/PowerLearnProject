@@ -3,7 +3,7 @@
   grid-column: 2 /4;
 
   overflow-y: auto;
-  padding: 16px;
+  padding: 1rem;
 }
 
 .title-container {
@@ -94,13 +94,25 @@
 
 .btn {
   background: none;
-  outline-color: var(--color-primary);
-  border: 2px solid var(--color-primary);
-  padding: 0.5em 0.75em;
-  border-radius: 0.25em;
+  border: none;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-bottom: 2px solid var(--color-secondary); 
+  padding-bottom: 0.2em;
   cursor: pointer;
+  color: var(--color-secondary); 
+  text-transform: uppercase;
+  outline: none; 
+  transition: color 0.3s ease, border-color 0.3s ease;
 }
+
 .btn:hover,
 .btn:focus {
-  background: var(--background-color);
+  color: var(--color-primary);
+  border-bottom-color: var(--color-primary); 
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--color-primary); 
+  outline-offset: 3px; 
 }

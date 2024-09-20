@@ -14,6 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "...", "public/recipe")));
 
 
 app.get("/register", (req, res) => {
@@ -38,6 +39,10 @@ app.get("/register", (req, res) => {
 
   app.get("/profile", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "profile.html"));
+  });
+
+  app.get("/directory/manure", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "manure.html"));
   });
 
 // Session management
