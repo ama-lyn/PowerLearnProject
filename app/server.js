@@ -45,6 +45,10 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public/recipe", "manure.html"));
   });
 
+  app.get("/directory/straw-to-animal-feed", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "straw.html"));
+  });
+
 // Session management
 app.use(
   session({
