@@ -14,6 +14,7 @@ dotenv.config();
 app.use(express.json());
 app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "public")));
+app.use(express.static(path.join(__dirname, "...", "public/recipe")));
 
 
 app.get("/register", (req, res) => {
@@ -38,6 +39,22 @@ app.get("/register", (req, res) => {
 
   app.get("/profile", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "profile.html"));
+  });
+
+  app.get("/directory/manure-to-biogas", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "manure.html"));
+  });
+
+  app.get("/directory/straw-to-animal-feed", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "straw.html"));
+  });
+
+  app.get("/directory/beeswax-to-candles", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "beeswax.html"));
+  });
+
+  app.get("/directory/substrate-to-organic-mushrooms", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "substrate.html"));
   });
 
 // Session management
