@@ -53,6 +53,10 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public/recipe", "beeswax.html"));
   });
 
+  app.get("/directory/substrate-to-organic-mushrooms", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "substrate.html"));
+  });
+
 // Session management
 app.use(
   session({
