@@ -41,7 +41,7 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public", "profile.html"));
   });
 
-  app.get("/directory/manure", (req, res) => {
+  app.get("/directory/manure-to-biogas", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public/recipe", "manure.html"));
   });
 
