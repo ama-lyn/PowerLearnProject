@@ -49,6 +49,10 @@ app.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname, "..", "public/recipe", "straw.html"));
   });
 
+  app.get("/directory/beeswax-to-candles", (req, res) => {
+    res.sendFile(path.join(__dirname, "..", "public/recipe", "beeswax.html"));
+  });
+
 // Session management
 app.use(
   session({
