@@ -90,11 +90,57 @@
             <button>Contact Seller</button>
           </div>
 
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price:</strong> $150</p>
+            <p><strong>Location:</strong> Mombasa, Kenya</p>
+            <p>
+              A small biogas kit suitable for household use, comes with
+              instructions.
+            </p>
+            <button>Contact Seller</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price:</strong> $150</p>
+            <p><strong>Location:</strong> Mombasa, Kenya</p>
+            <p>
+              A small biogas kit suitable for household use, comes with
+              instructions.
+            </p>
+            <button>Contact Seller</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price:</strong> $150</p>
+            <p><strong>Location:</strong> Mombasa, Kenya</p>
+            <p>A small biogas kit suitable for household use, comes with instructions.</p>
+            <p><strong>Contact Seller:</strong> <a href="mailto:seller@example.com">seller@example.com</a> <br> <a href="tel:+1234567890">+1234567890</a></p>
+            <button onclick="window.location.href='mailto:seller@example.com'">Contact Seller</button>
+        </div>
+
           <!-- More listings... -->
         </div>
 
-        <div class="post-product">
-          <h2>Post a Product for Sale</h2>
+        <div class="product-container">
+          <h3>🌟 Ready to Share Your Amazing Products? 🌟</h3> <br>
+          Let the world know what you have to offer—post your product for sale today and connect with eager buyers!
+          <br><br>
+          <button data-product-target="#popup" class="cta-button">Post Your Product</button>
+        </div>
+      
+      
+
+        <div class="post-product" id="popup">
+         <div class="popup-header">
+          <div class="popup-title">
+            <h2>Post a Product for Sale</h2>
+          </div>
+          <button data-close-button class="close-button">&times;</button>
+         </div>
+          
           <form id="form" action="/api/products" method="POST">
             <input id="product_name" type="text" name="product_name" placeholder="Product Name" required />
             <input  id="quantity" type="text" name="quantity" placeholder="Quantity (e.g., 300kg)" required />
@@ -107,8 +153,13 @@
             <p id="auth-msg"></p>
           </form>
         </div>
+        
+        <!--Overlay Background when Pop up appears-->
+        <div id="overlay"></div>
+
       </div>
     </main>
     <script src="/js/market.js"></script>
+    <script src="/js/popup.js"></script>
   </body>
 </html>
