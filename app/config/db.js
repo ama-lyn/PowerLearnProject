@@ -46,6 +46,22 @@ db.connect((err) => {
             FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE 
           );`;
 
+      const createProfilesTable = `
+            CREATE TABLE IF NOT EXISTS profiles  (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              user_id INT NOT NULL,
+              title VARCHAR(50),
+              gender VARCHAR(10),
+              phone_number VARCHAR(20),
+              national_id_number VARCHAR(20),
+              location VARCHAR(255),
+              profile_image VARCHAR(255), 
+              facebook_link VARCHAR(255),
+              linkedin_link VARCHAR(255),
+              instagram_link VARCHAR(255),
+              FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+            );`;
+
       db.query(createUsersTable, (err) => {
         if (err) return console.log("Error creating users table:", err);
         console.log("Users table created successfully");
@@ -54,6 +70,11 @@ db.connect((err) => {
       db.query(createProductsTable, (err) => {
         if (err) return console.log("Error creating products table:", err);
         console.log("Products table created successfully");
+      });
+
+      db.query(createProfilesTable, (err) => {
+        if (err) return console.log("Error creating profiles table:", err);
+        console.log("Profiles table created successfully");
       });
     });
   });

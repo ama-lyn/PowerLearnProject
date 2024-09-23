@@ -34,6 +34,8 @@
   padding: 6px;
   display: flex;
   text-decoration: none;
+  border: none;
+  cursor: pointer;
   color: inherit;
   align-items: center;
   font-weight: 500;
@@ -99,4 +101,91 @@
 .waste-header {
   display: flex;
   gap: 20px;
+}
+
+/*POP-UP*/
+.post-product {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%) scale(0);
+  transition: 200ms ease-in-out;
+  border: 1px solid grey;
+  border-radius: 10px;
+  z-index: 10;
+  background-color: var(--color-white);
+  width: 500px;
+  max-width: 80%;
+}
+
+.post-product.active{
+  transform: translate(-50%, -40%) scale(1);
+}
+
+.popup-header {
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.popup-header .popup-title {
+  font-size: 1.15rem;
+}
+
+.popup-header .close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+/*FORM*/
+.post-product form {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 15px;
+}
+
+.post-product form input,
+.post-product form textarea {
+  width: 60%;
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.post-product form button {
+  background-color: var(--bg-right);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.post-product form button:hover {
+  background-color: var(--bg-right);
+}
+
+#overlay {
+  position: fixed;
+  opacity: 0;
+  transition: 200ms ease-in-out;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  pointer-events: none;
+}
+
+#overlay.active{
+  opacity: 1;
+  pointer-events: all;
 }

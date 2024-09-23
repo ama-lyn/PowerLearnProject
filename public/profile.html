@@ -50,42 +50,81 @@
       <div class="profile-container">
         <!--PROFILE image, social icons-->
         <div class="profile">
+          <!--Profile Image-->
           <div class="profile-img">
             <img src="/images/profile1.jpg" alt="Profile Image" />
-            <a class="edit" href=""
+            <button data-product-target="#popup-profile-image" class="cta-button edit"
               ><img
                 src="images/edit.svg"
                 alt="Edit Icon"
                 style="width: 20px; height: 20px"
-              />Edit</a
+              />Edit</button
             >
           </div>
+          <!--Pop Up Form-->
+          <div class="post-product" id="popup-profile-image">
+            <div class="popup-header">
+             <div class="popup-title">
+               <h2>Edit Personal Info</h2>
+             </div>
+             <button data-close-button class="close-button">&times;</button>
+            </div>
+             
+             <form id="form" action="/api/user-profile" method="POST">
+               <input id="profile_image" type="text" name="profile_image" placeholder="Profile Image Url" required />
+               
+               <button type="submit">Submit</button>
+   
+               <p id="auth-msg"></p>
+             </form>
+           </div>
+           
+
+          <!--Social Icons-->
           <div class="profile-social-icons">
             <div class="social-icons">
               <img src="/images/facebook.svg" alt="Facebook" />
               <img src="/images/linkedin.svg" alt="LinkedIn" />
               <img src="/images/instagram.svg" alt="Instagram" />
             </div>
-            <a class="edit" href=""
+            <button data-product-target="#popup-social-links" class="cta-button edit"
               ><img
                 src="images/edit.svg"
                 alt="Edit Icon"
                 style="width: 20px; height: 20px"
-              />Edit</a
+              />Edit</button
             >
           </div>
         </div>
+        <!--Pop Up Form-->
+        <div class="post-product" id="popup-social-links">
+          <div class="popup-header">
+           <div class="popup-title">
+             <h2>Edit Personal Info</h2>
+           </div>
+           <button data-close-button class="close-button">&times;</button>
+          </div>
+           
+           <form id="form" action="/api/user-profile" method="POST">
+             <input id="facebook_link" type="text" name="facebook_link" placeholder="Facebook Link" required />
+             <input id="linkedin_link" type="text" name="linkedin_link" placeholder="Linkedin Link" required />
+             <input id="instagram_link" type="number" name="instagram_link" placeholder="Instagram Link" required />
+             <button type="submit">Submit</button>
+ 
+             <p id="auth-msg"></p>
+           </form>
+         </div>
 
         <!--Personal Info-->
         <div class="personal-info">
           <div class="info-header">
             <h3>Perosnal Info</h3>
-            <a class="edit" href=""
+            <button data-product-target="#popup-personal-info" class="cta-button edit"
               ><img
                 src="images/edit.svg"
                 alt="Edit Icon"
                 style="width: 20px; height: 20px"
-              />Edit</a
+              />Edit</button
             >
           </div>
 
@@ -104,6 +143,30 @@
                 <p>Location: <span></span></p>
               </div>
             </div>
+            <!--Pop Up Form -->
+            <div class="post-product" id="popup-personal-info">
+              <div class="popup-header">
+               <div class="popup-title">
+                 <h2>Edit Personal Info</h2>
+               </div>
+               <button data-close-button class="close-button">&times;</button>
+              </div>
+               
+               <form id="form" action="/api/user-profile" method="POST">
+                 <input id="title" type="text" name="title" placeholder="Title (e.g, Dairy Farmer)" required />
+                 <input id="gender" type="text" name="gender" placeholder="Gender" required />
+                 <input id="phone_number" type="number" name="phone_number" placeholder="Phone Number" required />
+                 <input id="national_id_number" type="number" name="national_id_number" placeholder="ID Number" required/>
+                 <input id="location" type="text" name="location" placeholder="Location" required />
+                 <button type="submit">Submit</button>
+     
+                 <p id="auth-msg"></p>
+               </form>
+             </div>
+             
+             <!--Overlay Background when Pop up appears-->
+             <div id="overlay"></div>
+
             <div class="waste">
               <div class="waste-header">
                 <h3>Wastes in Your Farm</h3>
@@ -119,5 +182,6 @@
         </div>
       </div>
     </main>
+    <script src="/js/popup.js"></script>
   </body>
 </html>

@@ -6,6 +6,7 @@ const path = require("path");
 
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
+const profileRoutes = require("./routes/profileRoutes");
 
 //Intialization
 const app = express();
@@ -70,6 +71,7 @@ app.use(
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
+app.use("/api/user-profile", profileRoutes);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");

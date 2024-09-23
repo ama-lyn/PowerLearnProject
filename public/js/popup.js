@@ -1,19 +1,24 @@
-const openPopup = document.querySelector("[data-product-target]");
-const closePopup = document.querySelector("[data-close-button]");
+const openPopup = document.querySelectorAll("[data-product-target]");
+const closePopup = document.querySelectorAll("[data-close-button]");
 const overlay = document.getElementById("overlay");
 
-openPopup.addEventListener("click", () => {
-  const popup = document.querySelector(openPopup.dataset.productTarget);
-  openPopUp(popup);
+openPopup.forEach((button) => {
+  button.addEventListener("click", () => {
+    const popup = document.querySelector(button.dataset.productTarget);
+    openPopUp(popup);
+  });
 });
 
 overlay.addEventListener("click", () => {
   const popup = document.querySelector(".post-product.active");
   closePopUp(popup);
 });
-closePopup.addEventListener("click", () => {
-  const popup = closePopup.closest(".post-product");
-  closePopUp(popup);
+
+closePopup.forEach((button) => {
+  button.addEventListener("click", () => {
+    const popup = closePopup.closest(".post-product");
+    closePopUp(popup);
+  });
 });
 
 function openPopUp(popup) {
