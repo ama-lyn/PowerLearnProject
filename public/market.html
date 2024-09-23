@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/layout.css" />
-   
+    <link rel="stylesheet" href="/css/market.css">
     <title>Market</title>
   </head>
   <body>
@@ -13,7 +13,9 @@
 
       <div class="menu_container">
         <div class="menu_link">
-          <a href="/dashboard"><img src="images/Home.svg" alt="Home Icon" />Dashboard</a>
+          <a href="/dashboard"
+            ><img src="images/Home.svg" alt="Home Icon" />Dashboard</a
+          >
         </div>
 
         <div class="menu_link">
@@ -23,7 +25,9 @@
         </div>
 
         <div class="menu_link">
-          <a class="active" href="/market"><img src="images/Globe.svg" alt="Globe Icon" />Market</a>
+          <a class="active" href="/market"
+            ><img src="images/Globe.svg" alt="Globe Icon" />Market</a
+          >
         </div>
 
         <div class="menu_link">
@@ -43,9 +47,63 @@
     </header>
 
     <main class="main">
-        MARKET
-    </main>
+      <div class="market-container">
+        <div class="title-container">
+          <h2>Turn Your Waste into Money</h2>
+          <p>
+            Buy & Sell Waste-based Products
+          </p>
+        </div>
+       
 
-    <section class="rightbar"></section>
+        <div class="search-bar">
+          <input type="text" placeholder="Search products or supplies..." />
+          <button>Search</button>
+        </div>
+
+        <div class="filter-categories">
+          <button>All</button>
+          <button>Sell Products</button>
+          <button>Buy Supplies</button>
+        </div>
+
+        <div class="product-listings">
+          <!-- Product Cards -->
+          <div class="product-card">
+            <h2>Organic Compost</h2>
+            <p><strong>Price:</strong> $20</p>
+            <p><strong>Location:</strong> Nairobi, Kenya</p>
+            <p>
+              High-quality organic compost, ideal for gardening and farming.
+            </p>
+            <button>Contact Seller</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price:</strong> $150</p>
+            <p><strong>Location:</strong> Mombasa, Kenya</p>
+            <p>
+              A small biogas kit suitable for household use, comes with
+              instructions.
+            </p>
+            <button>Contact Seller</button>
+          </div>
+
+          <!-- More listings... -->
+        </div>
+
+        <div class="post-product">
+          <h2>Post a Product for Sale</h2>
+          <form>
+            <input type="text" placeholder="Product Name" />
+            <input type="number" placeholder="Price" />
+            <textarea placeholder="Description"></textarea>
+            <input type="text" placeholder="Location" />
+            <button>Submit</button>
+          </form>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
