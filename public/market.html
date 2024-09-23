@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/layout.css" />
-   
+    <link rel="stylesheet" href="/css/market.css">
     <title>Market</title>
   </head>
   <body>
@@ -13,7 +13,9 @@
 
       <div class="menu_container">
         <div class="menu_link">
-          <a href="/dashboard"><img src="images/Home.svg" alt="Home Icon" />Dashboard</a>
+          <a href="/dashboard"
+            ><img src="images/Home.svg" alt="Home Icon" />Dashboard</a
+          >
         </div>
 
         <div class="menu_link">
@@ -23,7 +25,9 @@
         </div>
 
         <div class="menu_link">
-          <a class="active" href="/market"><img src="images/Globe.svg" alt="Globe Icon" />Market</a>
+          <a class="active" href="/market"
+            ><img src="images/Globe.svg" alt="Globe Icon" />Market</a
+          >
         </div>
 
         <div class="menu_link">
@@ -43,9 +47,123 @@
     </header>
 
     <main class="main">
-        MARKET
-    </main>
+      <div class="market-container">
+        <div class="title-container">
+          <h2>Turn Your Waste into Money</h2>
+          <p>
+            Buy & Sell Waste-based Products
+          </p>
+        </div>
+       
 
-    <section class="rightbar"></section>
+        <div class="search-bar">
+          <input type="text" placeholder="Search products or supplies..." />
+          <button>Search</button>
+        </div>
+
+        <div class="filter-categories">
+          <button>All</button>
+          <button>Sell Products</button>
+          <button>Buy Supplies</button>
+        </div>
+
+        <div class="product-listings">
+          <!-- Product Cards -->
+          <div class="product-card">
+            <h2>Organic Compost</h2>
+            <p><strong>Price</strong> Ksh 20</p>
+            <p><strong>Location</strong> Nairobi, Kenya</p>
+            <p>
+              High-quality organic compost, ideal for gardening and farming.
+            </p>
+            <p> <a href="mailto:seller@example.com">seller@example.com</a> <br> <a href="tel:+1234567890">+1234567890</a></p>
+            <button onclick="window.location.href='mailto:seller@example.com'">Send Email</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price</strong> Ksh 150</p>
+            <p><strong>Location</strong> Mombasa, Kenya</p>
+            <p>
+              A small biogas kit suitable for household use, comes with
+              instructions.
+            </p>
+            <p> <a href="mailto:seller@example.com">seller@example.com</a> <br> <a href="tel:+1234567890">+1234567890</a></p>
+            <button onclick="window.location.href='mailto:seller@example.com'">Send Email</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price</strong> Ksh 150</p>
+            <p><strong>Location</strong> Mombasa, Kenya</p>
+            <p>
+              A small biogas kit suitable for household use, comes with
+              instructions.
+            </p>
+            <p> <a href="mailto:seller@example.com">seller@example.com</a> <br> <a href="tel:+1234567890">+1234567890</a></p>
+            <button onclick="window.location.href='mailto:seller@example.com'">Send Email</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price</strong> Ksh 150</p>
+            <p><strong>Location</strong> Mombasa, Kenya</p>
+            <p>
+              A small biogas kit suitable for household use, comes with
+              instructions.
+            </p>
+            <p> <a href="mailto:seller@example.com">seller@example.com</a> <br> <a href="tel:+1234567890">+1234567890</a></p>
+            <button onclick="window.location.href='mailto:seller@example.com'">Send Email</button>
+          </div>
+
+          <div class="product-card">
+            <h2>Biogas Kit</h2>
+            <p><strong>Price</strong> Ksh 150</p>
+            <p><strong>Location</strong> Mombasa, Kenya</p>
+            <p>A small biogas kit suitable for household use, comes with instructions.</p>
+            <p> <a href="mailto:seller@example.com">seller@example.com</a> <br> <a href="tel:+1234567890">+1234567890</a></p>
+            <button onclick="window.location.href='mailto:seller@example.com'">Send Email</button>
+        </div>
+
+          <!-- More listings... -->
+        </div>
+
+        <div class="product-container">
+          <h3>🌟 Ready to Share Your Amazing Products? 🌟</h3> <br>
+          Let the world know what you have to offer—post your product for sale today and connect with eager buyers!
+          <br><br>
+          <button data-product-target="#popup" class="cta-button">Post Your Product</button>
+        </div>
+      
+      
+
+        <div class="post-product" id="popup">
+         <div class="popup-header">
+          <div class="popup-title">
+            <h2>Post a Product for Sale</h2>
+          </div>
+          <button data-close-button class="close-button">&times;</button>
+         </div>
+          
+          <form id="form" action="/api/products" method="POST">
+            <input id="product_name" type="text" name="product_name" placeholder="Product Name" required />
+            <input  id="quantity" type="text" name="quantity" placeholder="Quantity (e.g., 300kg)" required />
+            <input id="price" type="number" name="price" placeholder="Price" step="0.01" required />
+            <input id="location" type="text" name="location" placeholder="Location" required />
+            <textarea id="description" name="description" placeholder="Description" required></textarea>
+            <input id="category" type="hidden" name="category" value="Sell" /> <!-- Always "Sell" for now -->
+            <button type="submit">Submit</button>
+
+            <p id="auth-msg"></p>
+          </form>
+        </div>
+        
+        <!--Overlay Background when Pop up appears-->
+        <div id="overlay"></div>
+
+      </div>
+    </main>
+    <script src="/js/market.js"></script>
+    <script src="/js/popup.js"></script>
   </body>
 </html>
