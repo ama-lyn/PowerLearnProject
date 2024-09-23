@@ -32,11 +32,29 @@ db.connect((err) => {
             password VARCHAR(255) NOT NULL
           )`;
 
+      const createProductsTable = `
+          CREATE TABLE IF NOT EXISTS products (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            user_id INT,
+            product_name VARCHAR(255) NOT NULL,
+            description TEXT NOT NULL,
+            category VARCHAR(100),
+            price DECIMAL(10, 2),
+            quantity VARCHAR(100),
+            location VARCHAR(255),
+            date_posted DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE 
+          );`;
+
       db.query(createUsersTable, (err) => {
         if (err) return console.log("Error creating users table:", err);
         console.log("Users table created successfully");
       });
 
+      db.query(createProductsTable, (err) => {
+        if (err) return console.log("Error creating products table:", err);
+        console.log("Products table created successfully");
+      });
     });
   });
 });

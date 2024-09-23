@@ -95,15 +95,20 @@
 
         <div class="post-product">
           <h2>Post a Product for Sale</h2>
-          <form>
-            <input type="text" placeholder="Product Name" />
-            <input type="number" placeholder="Price" />
-            <textarea placeholder="Description"></textarea>
-            <input type="text" placeholder="Location" />
-            <button>Submit</button>
+          <form id="form" action="/api/products" method="POST">
+            <input id="product_name" type="text" name="product_name" placeholder="Product Name" required />
+            <input  id="quantity" type="text" name="quantity" placeholder="Quantity (e.g., 300kg)" required />
+            <input id="price" type="number" name="price" placeholder="Price" step="0.01" required />
+            <input id="location" type="text" name="location" placeholder="Location" required />
+            <textarea id="description" name="description" placeholder="Description" required></textarea>
+            <input id="category" type="hidden" name="category" value="Sell" /> <!-- Always "Sell" for now -->
+            <button type="submit">Submit</button>
+
+            <p id="auth-msg"></p>
           </form>
         </div>
       </div>
     </main>
+    <script src="/js/market.js"></script>
   </body>
 </html>

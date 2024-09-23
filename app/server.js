@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const path = require("path");
 
 const authRoutes = require("./routes/authRoutes");
+const productRoutes = require("./routes/productRoutes");
 
 //Intialization
 const app = express();
@@ -68,6 +69,7 @@ app.use(
 
 // Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/products", productRoutes);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
