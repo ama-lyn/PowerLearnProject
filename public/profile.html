@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
     <title>Profile</title>
   </head>
   <body>
@@ -12,7 +13,9 @@
 
       <div class="menu_container">
         <div class="menu_link">
-          <a href="/dashboard"><img src="images/Home.svg" alt="Home Icon" />Dashboard</a>
+          <a href="/dashboard"
+            ><img src="images/Home.svg" alt="Home Icon" />Dashboard</a
+          >
         </div>
 
         <div class="menu_link">
@@ -22,7 +25,9 @@
         </div>
 
         <div class="menu_link">
-          <a href="/market"><img src="images/Globe.svg" alt="Globe Icon" />Market</a>
+          <a href="/market"
+            ><img src="images/Globe.svg" alt="Globe Icon" />Market</a
+          >
         </div>
 
         <div class="menu_link">
@@ -42,9 +47,77 @@
     </header>
 
     <main class="main">
-        PROFILE
-    </main>
+      <div class="profile-container">
+        <!--PROFILE image, social icons-->
+        <div class="profile">
+          <div class="profile-img">
+            <img src="/images/profile1.jpg" alt="Profile Image" />
+            <a class="edit" href=""
+              ><img
+                src="images/edit.svg"
+                alt="Edit Icon"
+                style="width: 20px; height: 20px"
+              />Edit</a
+            >
+          </div>
+          <div class="profile-social-icons">
+            <div class="social-icons">
+              <img src="/images/facebook.svg" alt="Facebook" />
+              <img src="/images/linkedin.svg" alt="LinkedIn" />
+              <img src="/images/instagram.svg" alt="Instagram" />
+            </div>
+            <a class="edit" href=""
+              ><img
+                src="images/edit.svg"
+                alt="Edit Icon"
+                style="width: 20px; height: 20px"
+              />Edit</a
+            >
+          </div>
+        </div>
 
-    <section class="rightbar"></section>
+        <!--Personal Info-->
+        <div class="personal-info">
+          <div class="info-header">
+            <h3>Perosnal Info</h3>
+            <a class="edit" href=""
+              ><img
+                src="images/edit.svg"
+                alt="Edit Icon"
+                style="width: 20px; height: 20px"
+              />Edit</a
+            >
+          </div>
+
+          <div class="info-body">
+            <div class="personal">
+              <div>
+                <p>Title:<span></span></p>
+                <p>First Name: Gwendolyn  <span></span></p>
+                <p>Middle Name: Amanda <span></span></p>
+                <p>Gender: <span></span></p>
+              </div>
+              <div>
+                <p>Email: <span></span></p>
+                <p>Phone Number: <span></span></p>
+                <p>National ID Number: <span></span></p>
+                <p>Location: <span></span></p>
+              </div>
+            </div>
+            <div class="waste">
+              <div class="waste-header">
+                <h3>Wastes in Your Farm</h3>
+                <a href=""> Add New Waste</a>
+              </div>
+              <div class="waste-list" style="color: green">
+                <p><span>♻️</span>Manure</p>
+                <p><span>♻️</span>Hay</p>
+                <p><span>♻️</span>Beeswax</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
