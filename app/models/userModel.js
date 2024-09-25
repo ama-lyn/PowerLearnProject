@@ -25,6 +25,16 @@ const User = {
       }
     );
   },
+  
+  getUser: function (user_id, callback) {
+    const sql = `SELECT * FROM users WHERE id = ?`;
+    db.query(sql, [user_id], (error, result) => {
+      if (error) {
+        return callback(error, null);
+      }
+      callback(null, result[0]);
+    });
+  },
 };
 
 module.exports = User;

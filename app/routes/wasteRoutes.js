@@ -1,24 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const Product = require("../models/productModel");
+const Waste = require("../models/wasteModel");
 const authenticateToken = require("../middlewares/authenticateToken");
 
-//Posting a Porduct Route
+//Posting Waste 
 router.post("/", authenticateToken, async (req, res) => {
   try {
-    // Define a new product object
-    const newProduct = {
+    // Define a new  Waste object
+    const newWaste = {
         user_id: req.user.id,
-        product_name: req.body.product_name,
-        quantity: req.body.quantity,
-        price: req.body.price,
-        location: req.body.location,
-        description: req.body.description,
-        category: req.body.category || 'Sell', 
+        type: req.body.type,
+        source: req.body.source,
     };
 
-    //Save the new Product in the Database
-    Product.createProduct(newProduct, (error, result) => {
+    //Save the new Waste in the Database
+    Waste.createWaste(newWaste, (error, result) => {
       if (error) {
         console.error(
           "An error occured while saving the record:",
@@ -26,8 +22,8 @@ router.post("/", authenticateToken, async (req, res) => {
         );
         return res.status(500).json({ error: error.message });
       }
-      console.log("New Product record saved!");
-      res.status(201).json({ message: "Product created successfully" });
+      console.log("New Waste record saved!");
+      res.status(201).json({ message: "Waste created successfully" });
     });
   } catch (error) {
     console.error("Error in creating user:", error.message);
@@ -35,18 +31,20 @@ router.post("/", authenticateToken, async (req, res) => {
   }
 });
 
-// Getting all Products route 
+// Getting all wastes type route 
 router.get("/", authenticateToken, (req, res) => {
     try {
-      Product.getAllProducts((error, products) => {
+      const user_id = req.user.id;
+
+      Waste.getWaste(user_id, (error, waste) => {
         if (error) {
-          console.error("Error fetching products:", error.message);
+          console.error("Error fetching wastes:", error.message);
           return res.status(500).json({ error: error.message });
         }
-        res.status(200).json(products);
+        res.status(200).json(waste);
       });
     } catch (error) {
-      console.error("Error fetching products:", error.message);
+      console.error("Error fetching wastes:", error.message);
       res.status(500).json({ error: error.message });
     }
 });

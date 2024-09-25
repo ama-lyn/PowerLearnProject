@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/profile.css" />
     <title>Profile</title>
   </head>
   <body>
@@ -12,7 +13,9 @@
 
       <div class="menu_container">
         <div class="menu_link">
-          <a href="/dashboard"><img src="images/Home.svg" alt="Home Icon" />Dashboard</a>
+          <a href="/dashboard"
+            ><img src="images/Home.svg" alt="Home Icon" />Dashboard</a
+          >
         </div>
 
         <div class="menu_link">
@@ -22,7 +25,9 @@
         </div>
 
         <div class="menu_link">
-          <a href="/market"><img src="images/Globe.svg" alt="Globe Icon" />Market</a>
+          <a href="/market"
+            ><img src="images/Globe.svg" alt="Globe Icon" />Market</a
+          >
         </div>
 
         <div class="menu_link">
@@ -42,9 +47,159 @@
     </header>
 
     <main class="main">
-        PROFILE
-    </main>
+      <div class="profile-container">
+        <!--PROFILE image, social icons-->
+        <div class="profile">
+          <!--Profile Image-->
+          <div class="profile-img">
+            <img id="profile-image" src="/images/profile1.jpg" alt="Profile Image" />
+            <button data-product-target="#popup-profile-image" class="cta-button edit"
+              ><img
+                src="images/edit.svg"
+                alt="Edit Icon"
+                style="width: 20px; height: 20px"
+              />Edit</button
+            >
+          </div>
+          <!--Pop Up Form-->
+          <div class="post-product" id="popup-profile-image">
+            <div class="popup-header">
+             <div class="popup-title">
+               <h2>Edit Personal Info</h2>
+             </div>
+             <button data-close-button class="close-button">&times;</button>
+            </div>
+             
+             <form id="form-profile-image" action="/api/user-profile/profile-image" method="POST">
+               <input id="profile_image" type="text" name="profile_image" placeholder="Profile Image Url" required />
+               
+               <button type="submit">Submit</button>
+   
+               <p id="authMsgProfileImage"></p>
+             </form>
+           </div>
+           
 
-    <section class="rightbar"></section>
+          <!--Social Icons-->
+          <div class="profile-social-icons">
+            <div class="social-icons">
+              <a id="facebook" href=""><img src="/images/facebook.svg" alt="Facebook" /></a>
+              <a id="linkedin" href=""><img src="/images/linkedin.svg" alt="LinkedIn" /></a>
+              <a id="instagram" href=""><img src="/images/instagram.svg" alt="Instagram" /></a>
+            </div>
+            <button data-product-target="#popup-social-links" class="cta-button edit"
+              ><img
+                src="images/edit.svg"
+                alt="Edit Icon"
+                style="width: 20px; height: 20px"
+              />Edit</button
+            >
+          </div>
+        </div>
+        <!--Pop Up Form-->
+        <div class="post-product" id="popup-social-links">
+          <div class="popup-header">
+           <div class="popup-title">
+             <h2>Edit Personal Info</h2>
+           </div>
+           <button data-close-button class="close-button">&times;</button>
+          </div>
+           
+           <form id="form-social-links" action="/api/user-profile/social-links" method="POST">
+             <input id="facebook_link" type="text" name="facebook_link" placeholder="Facebook Link" required />
+             <input id="linkedin_link" type="text" name="linkedin_link" placeholder="Linkedin Link" required />
+             <input id="instagram_link" type="text" name="instagram_link" placeholder="Instagram Link" required />
+             <button type="submit">Submit</button>
+ 
+             <p id="authMsgSocialLinks"></p>
+           </form>
+         </div>
+
+        <!--Personal Info-->
+        <div class="personal-info">
+          <div class="info-header">
+            <h3>Perosnal Info</h3>
+            <button data-product-target="#popup-personal-info" class="cta-button edit"
+              ><img
+                src="images/edit.svg"
+                alt="Edit Icon"
+                style="width: 20px; height: 20px"
+              />Edit</button
+            >
+          </div>
+
+          <div class="info-body">
+            <div class="personal">
+              <div>
+                <p>Title: <span id="title"></span></p>
+                <p>First Name: <span id="firstName"></span></p>
+                <p>Last Name: <span id="lastName"></span></p>
+                <p>Gender: <span id="gender"></span></p>
+              </div>
+              <div>
+                <p>Email: <span id="email"></span></p>
+                <p>Phone Number: <span id="phone-number"></span></p>
+                <p>National ID Number: <span id="national-id"></span></p>
+                <p>Location: <span id="location"></span></p>
+              </div>
+            </div>
+            <!--Pop Up Form -->
+            <div class="post-product" id="popup-personal-info">
+              <div class="popup-header">
+               <div class="popup-title">
+                 <h2>Edit Personal Info</h2>
+               </div>
+               <button data-close-button class="close-button">&times;</button>
+              </div>
+               
+               <form id="form-personal-info" action="/api/user-profile/personal-info" method="POST">
+                 <input id="title" type="text" name="title" placeholder="Title (e.g, Dairy Farmer)" required />
+                 <input id="gender" type="text" name="gender" placeholder="Gender" required />
+                 <input id="phone_number" type="number" name="phone_number" placeholder="Phone Number" required />
+                 <input id="national_id_number" type="number" name="national_id_number" placeholder="ID Number" required/>
+                 <input id="location" type="text" name="location" placeholder="Location" required />
+                 <button type="submit">Submit</button>
+     
+                 <p id="authMsgPersonalInfo"></p>
+               </form>
+             </div>
+             
+             <!--Overlay Background when Pop up appears-->
+             <div id="overlay"></div>
+
+            <div class="waste">
+              <div class="waste-header">
+                <h3>Wastes in Your Farm</h3>
+                <button data-product-target="#popup-waste" class="cta-button" > Add New Waste</button>
+              </div>
+              <div class="waste-list" style="color: green">
+              </div>
+            </div>
+
+             <!--Pop Up Form -->
+             <div class="post-product" id="popup-waste">
+              <div class="popup-header">
+               <div class="popup-title">
+                 <h2>Add Waste</h2>
+               </div>
+               <button data-close-button class="close-button">&times;</button>
+              </div>
+               
+               <form id="form-waste" action="/api/wastes" method="POST">
+                 <input id="type" type="text" name="type" placeholder="Type (e.g, Manure)" required />
+                 <input id="source" type="text" name="source" placeholder="Source (e.g, Cattle)" required />
+                 
+                 <button type="submit">Submit</button>
+     
+                 <p id="authMsgWaste"></p>
+               </form>
+             </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="/js/popup.js"></script>
+    <script type="module" src="/js/profile.js"></script>
+    <script type="module" src="/js/loadProfile.js"></script>
   </body>
 </html>
