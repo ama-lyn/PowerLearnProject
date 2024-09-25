@@ -7,6 +7,7 @@ const path = require("path");
 const authRoutes = require("./routes/authRoutes");
 const productRoutes = require("./routes/productRoutes");
 const profileRoutes = require("./routes/profileRoutes");
+const wasteRoutes = require("./routes/wasteRoutes");
 
 //Intialization
 const app = express();
@@ -72,6 +73,7 @@ app.use(
 app.use("/api/auth", authRoutes);
 app.use("/api/products", productRoutes);
 app.use("/api/user-profile", profileRoutes);
+app.use("/api/wastes", wasteRoutes);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");

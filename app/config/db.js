@@ -62,6 +62,15 @@ db.connect((err) => {
               FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
             );`;
 
+      const createWastesTable = `
+            CREATE TABLE IF NOT EXISTS wastes (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              type VARCHAR(50) NOT NULL,
+              source VARCHAR(100),
+              user_id INT,
+              FOREIGN KEY (user_id) REFERENCES users(id) 
+            );`;
+
       db.query(createUsersTable, (err) => {
         if (err) return console.log("Error creating users table:", err);
         console.log("Users table created successfully");
@@ -76,6 +85,11 @@ db.connect((err) => {
         if (err) return console.log("Error creating profiles table:", err);
         console.log("Profiles table created successfully");
       });
+
+      db.query(createWastesTable, (err)=>{
+        if (err) return console.log("Error creating wastes table:", err);
+        console.log("Wastes table created successfully");
+      })
     });
   });
 });

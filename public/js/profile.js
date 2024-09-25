@@ -114,4 +114,43 @@ document.addEventListener("DOMContentLoaded", () => {
       authMsgPersonalInfo.style.color = "red";
     }
   });
+
+  // WasteForm
+  const formWaste = document.getElementById("form-waste");
+  const authMsgWaste = document.getElementById("authMsgWaste");
+
+  formWaste.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const type = document.getElementById("type").value;
+    const source = document.getElementById("source").value;
+    
+    authMsgWaste.textContent = "";
+
+    try {
+      const response = await fetch("/api/wastes", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${token}`,
+        },
+        body: JSON.stringify({
+          type, source
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        authMsgWaste.textContent = data.errors.map((error) => error.msg).join(", ");
+        authMsgWaste.style.color = "red";
+      } else {
+        authMsgWaste.textContent = "Added successfully";
+        authMsgWaste.style.color = "green";
+        formPersonalInfo.reset(); // Reset form fields
+      }
+    } catch (err) {
+      authMsgWaste.textContent = `An error occurred: ${err.message}`;
+      authMsgWaste.style.color = "red";
+    }
+  });
 });

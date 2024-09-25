@@ -170,7 +170,7 @@
             <div class="waste">
               <div class="waste-header">
                 <h3>Wastes in Your Farm</h3>
-                <a href=""> Add New Waste</a>
+                <button data-product-target="#popup-waste" class="cta-button" > Add New Waste</button>
               </div>
               <div class="waste-list" style="color: green">
                 <p><span>♻️</span>Manure</p>
@@ -178,6 +178,25 @@
                 <p><span>♻️</span>Beeswax</p>
               </div>
             </div>
+
+             <!--Pop Up Form -->
+             <div class="post-product" id="popup-waste">
+              <div class="popup-header">
+               <div class="popup-title">
+                 <h2>Add Waste</h2>
+               </div>
+               <button data-close-button class="close-button">&times;</button>
+              </div>
+               
+               <form id="form-waste" action="/api/wastes" method="POST">
+                 <input id="type" type="text" name="type" placeholder="Type (e.g, Manure)" required />
+                 <input id="source" type="text" name="source" placeholder="Source (e.g, Cattle)" required />
+                 
+                 <button type="submit">Submit</button>
+     
+                 <p id="authMsgWaste"></p>
+               </form>
+             </div>
           </div>
         </div>
       </div>
