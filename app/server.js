@@ -19,46 +19,49 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "..", "public")));
 app.use(express.static(path.join(__dirname, "...", "public/recipe")));
 
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "landingPage.html"));
+});
 
 app.get("/register", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "register.html"));
-  });
-  
-  app.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "login.html"));
-  });
-  
-  app.get("/dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "dashboard.html"));
-  });
+  res.sendFile(path.join(__dirname, "..", "public", "register.html"));
+});
 
-  app.get("/directory", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "directory.html"));
-  });
+app.get("/login", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "login.html"));
+});
 
-  app.get("/market", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "market.html"));
-  });
+app.get("/dashboard", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "dashboard.html"));
+});
 
-  app.get("/profile", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public", "profile.html"));
-  });
+app.get("/directory", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "directory.html"));
+});
 
-  app.get("/directory/manure-to-biogas", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public/recipe", "manure.html"));
-  });
+app.get("/market", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "market.html"));
+});
 
-  app.get("/directory/straw-to-animal-feed", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public/recipe", "straw.html"));
-  });
+app.get("/profile", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public", "profile.html"));
+});
 
-  app.get("/directory/beeswax-to-candles", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public/recipe", "beeswax.html"));
-  });
+app.get("/directory/manure-to-biogas", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public/recipe", "manure.html"));
+});
 
-  app.get("/directory/substrate-to-organic-mushrooms", (req, res) => {
-    res.sendFile(path.join(__dirname, "..", "public/recipe", "substrate.html"));
-  });
+app.get("/directory/straw-to-animal-feed", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public/recipe", "straw.html"));
+});
+
+app.get("/directory/beeswax-to-candles", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public/recipe", "beeswax.html"));
+});
+
+app.get("/directory/substrate-to-organic-mushrooms", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "public/recipe", "substrate.html"));
+});
 
 // Session management
 app.use(

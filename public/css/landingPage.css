@@ -1,0 +1,109 @@
+/* Variables
+   ============================= */
+:root {
+  --color-primary: #163135;
+  --color-secondary: #e5590a;
+  --color-black: #090909;
+  --color-white: #ffffff;
+  --background-color: #f2f2f2;
+  --bg-right: #cde1c3;
+  --sidebar: #d2efeb;
+}
+
+*,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+}
+
+.logo {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.nav-left {
+  display: flex;
+  gap: 25px;
+  align-items: baseline;
+}
+
+.nav-left .menu {
+  border-left: 2px solid gainsboro;
+  padding-left: 25px;
+}
+
+.nav-left .menu a {
+  text-decoration: none;
+  color: inherit;
+  margin-right: 20px;
+}
+
+.nav-left .menu a:hover {
+  color: var(--color-secondary);
+}
+
+.nav-right a {
+  text-decoration: none;
+  border: 1.5px solid var(--color-secondary);
+  margin-left: 20px;
+  border-radius: 16px;
+  padding: 0.3em 0.8em;
+}
+
+.nav-right .login {
+  color: var(--color-secondary);
+}
+
+.nav-right .register {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px 100px;
+  align-items: baseline;
+}
+
+section {
+  padding: 64px 100px;
+}
+
+.hero {
+  display: flex;
+  gap: 15rem;
+  align-items: center;
+}
+
+.hero-left h1 {
+  font-size: 2.5em;
+}
+
+.hero-left div {
+  margin-top: 50px;
+}
+
+.hero-left a {
+  text-decoration: none;
+  border: 1.5px solid var(--color-secondary);
+  margin-right: 20px;
+  border-radius: 16px;
+  padding: 0.4em 0.8em;
+}
+
+.hero-left .register {
+  color: var(--color-white);
+  background-color: var(--color-secondary);
+}
+
+.hero-left .info {
+  color: var(--color-secondary);
+}
+
+.hero-right {
+  margin-right: 40px;
+}
