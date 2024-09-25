@@ -8,11 +8,15 @@ const Waste = {
     db.query("INSERT INTO " + this.tableName + " SET ?", newWaste, callback);
   },
 
-  // Fetch Waste Type
-  getWasteType: function (callback) {
-    const query =
-      "SELECT type FROM " + this.tableName + " WHERE ";
-    db.query(query, callback);
+  // Fetch Waste
+  getWaste: function (user_id, callback) {
+    const sql = `SELECT * FROM wastes WHERE user_id = ?`;
+    db.query(sql, [user_id], (error, result) => {
+      if (error) {
+        return callback(error, null);
+      }
+      callback(null, result);
+    });
   },
 };
 

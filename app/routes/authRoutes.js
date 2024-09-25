@@ -4,8 +4,9 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { validationResult } = require("express-validator");
 const db = require("../config/db");
-const User = require("../models/UserModel");
+const User = require("../models/userModel");
 const registrationValidationChecks = require("../middlewares/registrationValidationchecks");
+const authenticateToken = require("../middlewares/authenticateToken");
 
 // User Registration route
 router.post("/register", registrationValidationChecks, async (req, res) => {
@@ -97,6 +98,23 @@ router.post("/login", async (req, res) => {
   } catch (err) {
     console.error("Internal Server Error:", err);
     res.status(500).json("Internal Server Error");
+  }
+});
+
+router.get("/user", authenticateToken, (req, res) => {
+  try {
+    const user_id = req.user.id;
+
+    User.getUser(user_id, (error, profile) => {
+      if (error) {
+        console.error("Error fetching profile:", error.message);
+        return res.status(500).json({ error: error.message });
+      }
+      res.status(200).json(profile);
+    });
+  } catch (error) {
+    console.error("Error fetching profile:", error.message);
+    res.status(500).json({ error: error.message });
   }
 });
 

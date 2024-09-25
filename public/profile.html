@@ -52,7 +52,7 @@
         <div class="profile">
           <!--Profile Image-->
           <div class="profile-img">
-            <img src="/images/profile1.jpg" alt="Profile Image" />
+            <img id="profile-image" src="/images/profile1.jpg" alt="Profile Image" />
             <button data-product-target="#popup-profile-image" class="cta-button edit"
               ><img
                 src="images/edit.svg"
@@ -83,9 +83,9 @@
           <!--Social Icons-->
           <div class="profile-social-icons">
             <div class="social-icons">
-              <img src="/images/facebook.svg" alt="Facebook" />
-              <img src="/images/linkedin.svg" alt="LinkedIn" />
-              <img src="/images/instagram.svg" alt="Instagram" />
+              <a id="facebook" href=""><img src="/images/facebook.svg" alt="Facebook" /></a>
+              <a id="linkedin" href=""><img src="/images/linkedin.svg" alt="LinkedIn" /></a>
+              <a id="instagram" href=""><img src="/images/instagram.svg" alt="Instagram" /></a>
             </div>
             <button data-product-target="#popup-social-links" class="cta-button edit"
               ><img
@@ -131,16 +131,16 @@
           <div class="info-body">
             <div class="personal">
               <div>
-                <p>Title:<span></span></p>
-                <p>First Name: Gwendolyn  <span></span></p>
-                <p>Middle Name: Amanda <span></span></p>
-                <p>Gender: <span></span></p>
+                <p>Title: <span id="title"></span></p>
+                <p>First Name: <span id="firstName"></span></p>
+                <p>Last Name: <span id="lastName"></span></p>
+                <p>Gender: <span id="gender"></span></p>
               </div>
               <div>
-                <p>Email: <span></span></p>
-                <p>Phone Number: <span></span></p>
-                <p>National ID Number: <span></span></p>
-                <p>Location: <span></span></p>
+                <p>Email: <span id="email"></span></p>
+                <p>Phone Number: <span id="phone-number"></span></p>
+                <p>National ID Number: <span id="national-id"></span></p>
+                <p>Location: <span id="location"></span></p>
               </div>
             </div>
             <!--Pop Up Form -->
@@ -173,9 +173,9 @@
                 <button data-product-target="#popup-waste" class="cta-button" > Add New Waste</button>
               </div>
               <div class="waste-list" style="color: green">
-                <p><span>♻️</span>Manure</p>
-                <p><span>♻️</span>Hay</p>
-                <p><span>♻️</span>Beeswax</p>
+                <p>♻️<span id="waste-type"></span></p>
+                <p>♻️<span>Manure</span></p>
+                <p>♻️<span>Manure</span></p>
               </div>
             </div>
 
@@ -203,5 +203,6 @@
     </main>
     <script src="/js/popup.js"></script>
     <script src="/js/profile.js"></script>
+    <script src="/js/loadProfile.js"></script>
   </body>
 </html>

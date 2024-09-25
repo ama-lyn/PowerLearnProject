@@ -34,12 +34,14 @@ router.post("/", authenticateToken, async (req, res) => {
 // Getting all wastes type route 
 router.get("/", authenticateToken, (req, res) => {
     try {
-      Waste.getWasteType((error, waste) => {
+      const user_id = req.user.id;
+
+      Waste.getWaste(user_id, (error, waste) => {
         if (error) {
           console.error("Error fetching wastes:", error.message);
           return res.status(500).json({ error: error.message });
         }
-        res.status(200).json(wastes);
+        res.status(200).json(waste);
       });
     } catch (error) {
       console.error("Error fetching wastes:", error.message);
