@@ -16,7 +16,7 @@ overlay.addEventListener("click", () => {
 
 closePopup.forEach((button) => {
   button.addEventListener("click", () => {
-    const popup = closePopup.closest(".post-product");
+    const popup = button.closest(".post-product");
     closePopUp(popup);
   });
 });

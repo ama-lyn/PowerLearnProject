@@ -3,23 +3,47 @@ const db = require("../config/db");
 const Profile = {
   tableName: "profiles",
 
-  // Insert new profile into the database
-  createProfile: function (newProfile, callback) {
-    const sql = `
-    INSERT INTO profiles (user_id, title, gender, phone_number, national_id_number, location, profile_image, facebook_link, linkedin_link, instagram_link)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
-  `;
+  // Add profile image
+  addProfileImage: function (newProfileImage, callback) {
+    const sql = `INSERT INTO profiles (user_id, profile_image) VALUES (?, ?)`;
+    const values = [newProfileImage.user_id, newProfileImage.profile_image];
+
+    db.query(sql, values, (error, result) => {
+      if (error) {
+        return callback(error, null);
+      }
+      callback(null, result);
+    });
+  },
+
+  // Add social links 
+  addSocialLinks: function (newSocialLinks, callback) {
+    const sql = `INSERT INTO profiles (user_id, facebook_link, linkedin_link, instagram_link) VALUES (?, ?, ?, ?)`;
     const values = [
-      newProfile.user_id,
-      newProfile.title,
-      newProfile.gender,
-      newProfile.phone_number,
-      newProfile.national_id_number,
-      newProfile.location,
-      newProfile.profile_image,
-      newProfile.facebook_link,
-      newProfile.linkedin_link,
-      newProfile.instagram_link,
+      newSocialLinks.user_id,
+      newSocialLinks.facebook_link,
+      newSocialLinks.linkedin_link,
+      newSocialLinks.instagram_link,
+    ];
+
+    db.query(sql, values, (error, result) => {
+      if (error) {
+        return callback(error, null);
+      }
+      callback(null, result);
+    });
+  },
+
+  // Add personal info
+  addPersonalInfo: function (newPersonalInfo, callback) {
+    const sql = `INSERT INTO profiles (user_id, title, gender, phone_number, national_id_number, location) VALUES (?, ?, ?, ?, ?, ?)`;
+    const values = [
+      newPersonalInfo.user_id,
+      newPersonalInfo.title,
+      newPersonalInfo.gender,
+      newPersonalInfo.phone_number,
+      newPersonalInfo.national_id_number,
+      newPersonalInfo.location,
     ];
 
     db.query(sql, values, (error, result) => {
@@ -37,7 +61,7 @@ const Profile = {
       if (error) {
         return callback(error, null);
       }
-      callback(null, result[0]); // Return the first profile matching the user_id
+      callback(null, result[0]);
     });
   },
 };

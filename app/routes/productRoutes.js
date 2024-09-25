@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../config/db");
 const Product = require("../models/productModel");
 const authenticateToken = require("../middlewares/authenticateToken");
 
