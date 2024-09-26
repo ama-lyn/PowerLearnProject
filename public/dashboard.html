@@ -14,7 +14,9 @@
 
       <div class="menu_container">
         <div class="menu_link">
-          <a class="active" href="/dashboard"><img src="images/Home.svg" alt="Home Icon" />Dashboard</a>
+          <a class="active" href="/dashboard"
+            ><img src="images/Home.svg" alt="Home Icon" />Dashboard</a
+          >
         </div>
 
         <div class="menu_link">
@@ -24,7 +26,9 @@
         </div>
 
         <div class="menu_link">
-          <a href="/market"><img src="images/Globe.svg" alt="Globe Icon" />Market</a>
+          <a href="/market"
+            ><img src="images/Globe.svg" alt="Globe Icon" />Market</a
+          >
         </div>
 
         <div class="menu_link">
@@ -33,9 +37,7 @@
           >
         </div>
         <div class="logout">
-          <a href="/login"
-            ><img src="images/logout.svg" alt="Logout" /></a
-          >
+          <a href="/login"><img src="images/logout.svg" alt="Logout" /></a>
         </div>
       </div>
 
@@ -50,36 +52,77 @@
 
     <!-- MAIN-->
     <main class="main">
-      <div class="greetings">Welcome back, Gwendolyn👋</div>
+      <div class="greetings">
+        <p id="welcome" style="font-size: 1.2rem"></p>
+        <div class="calendar">
+          <img
+            src="/images/calendar.svg"
+            alt="Calendar"
+            style="width: 20px; height: 20px"
+          />
+          <p id="date"></p>
+        </div>
+      </div>
+
       <div class="waste">
         <div class="waste_title_container">
-          <img src="/images/waste.png" alt="Waste Icon" />
+          <img src="/images/eco.jpg" alt="Waste Icon" />
 
           <div class="waste_title">
-            <h4>Waste Overview</h4>
-            <p style="font-style: italic; color: gray">Placeholder Text</p>
+            <h3>Waste Overview</h3>
+            <p style="font-style: italic; color: gray">Current Waste Records</p>
           </div>
         </div>
 
         <div class="waste_cards">
           <div class="card">
-            Card Content from DB
+            <img src="/images/trash.jpg" alt="Waste Icon" />
+            <p style="font-size: 1rem">Manure</p>
+            <div class="content">
+              <p>Cattle</p>
+              <p>500kg</p>
+            </div>
           </div>
           <div class="card">
-            Card Content from DB
+            <img src="/images/trash.jpg" alt="Waste Icon" />
+            <p style="font-size: 1rem">Dry Corn Stalks</p>
+            <div class="content">
+              <p>Maize</p>
+              <p>300kg</p>
+            </div>
           </div>
           <div class="card">
-            Card Content from DB
-            
+            <img src="/images/trash.jpg" alt="Waste Icon" />
+            <p style="font-size: 1rem">Banana Leaves</p>
+            <div class="content">
+              <p>Banana Plants</p>
+              <p>200kg</p>
+            </div>
           </div>
         </div>
       </div>
       <div class="conversion">
         <div class="suggestion">
-          Conversion Suggestion
+          <h4 style="margin-bottom: 8px">Latest Update</h4>
+
+          <div class="news-card">
+            <p>“New recipe available for converting food waste to compost!”</p>
+            <p class="date">Date: September 26, 2024</p>
+            <a href="#" class="link">Read More</a>
+          </div>
+
+          <div class="news-card">
+            <p>
+              <span>Featured Recipe:</span>Turn dairy waste into ghee – Easy
+              steps inside!
+            </p>
+            <p class="date">Date: September 26, 2024</p>
+            <a href="#" class="link">View Recipe</a>
+          </div>
         </div>
         <div class="environmental_impact">
-          Environmental Impact
+          <h4 style="margin-bottom: 5px">Environmental Impact</h4>
+          <canvas id="co2Chart" style="max-width: 220px"></canvas>
         </div>
       </div>
     </main>
@@ -88,22 +131,41 @@
     <section class="rightbar">
       <div class="addWaste">
         <div class="opinion_container">
-          <p>OPINION</p>
-          <p>A waste is three times... quote</p>
+          <p class="opinion">OPINION</p>
+          <p style="font-size: 0.9rem">
+            Every bit of waste is a resource waiting to be used
+          </p>
         </div>
         <a href="/profile">
-          <img src="images/plus.svg" alt="Plus Icon" />Add New Waste</a>
+          <img src="images/plus.svg" alt="Plus Icon" />Add New Waste</a
+        >
       </div>
 
       <div class="recommendation_container">
-        <h3>Product recommendations</h3>
+        <div class="r_title">
+          <h4 style="width: 50%">Product recommendations</h4>
+          <a href="/directory">convert</a>
+        </div>
+
         <div class="recommendations">
-          <p>1. Organic Mushrooms</p>
-          <p>2. Fresh Spinach</p>
-          <p>3. Natural Fertilizer</p>
-          <p>4. Organic Honey</p>
+          <div class="r_card">
+            <p>🍄 Organic Mushrooms</p>
+            <p class="comment">~ Profitable, a great source of income</p>
+          </div>
+
+          <div class="r_card">
+            <p>🕯️ Beeswax Candles</p>
+            <p class="comment">~ Natural, sustainable light source</p>
+          </div>
+
+          <div class="r_card">
+            <p>🌱 Natural Fertilizer</p>
+            <p class="comment">~ Enriches soil, boosts crop health</p>
+          </div>
         </div>
       </div>
     </section>
+    <script src="/js/dashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
